@@ -99,3 +99,9 @@ To keep this safe to share publicly, the following were **not** copied from the 
 In Claude Code, run `/plugin`, add the three marketplaces from `plugins/marketplaces.json`,
 then install each id in `plugins/plugins.json`. For MCP servers, use
 `claude/mcp/mcpServers.template.json` as a guide and add each with `claude mcp add-json` or `/mcp`.
+
+## License
+
+[MIT](LICENSE) — covers the workspace configuration, installer, and original content authored
+for this repository. Vendored skills under `claude/skills/` and any plugins installed by
+`setup.sh` are the work of their respective authors and remain subject to their own licenses.
