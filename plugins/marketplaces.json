@@ -1,0 +1,20 @@
+{
+  "_comment": "Plugin marketplaces to register before installing plugins. setup.sh runs `claude plugin marketplace add` for each.",
+  "marketplaces": [
+    {
+      "name": "claude-plugins-official",
+      "type": "github",
+      "ref": "anthropics/claude-plugins-official"
+    },
+    {
+      "name": "designer-skills",
+      "type": "github",
+      "ref": "Owl-Listener/designer-skills"
+    },
+    {
+      "name": "airwallex-marketplace",
+      "type": "git",
+      "ref": "https://github.com/airwallex/airwallex-marketplace.git"
+    }
+  ]
+}

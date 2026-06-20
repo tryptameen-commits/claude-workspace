@@ -1,0 +1,26 @@
+{
+  "skill_name": "juce-audio-dev",
+  "evals": [
+    {
+      "id": 0,
+      "name": "seqfx-add-bitcrusher-effect",
+      "prompt": "I want to add a new bitcrusher effect to SeqFX (bit-depth reduction + sample-rate reduction / downsampling). Lay out exactly how to wire it into the plugin end to end — the new engine, the sequencer parameters, the processing chain, and tests. Don't edit my repo; write me the plan plus the new code as a proposal I can review.",
+      "expected_output": "A plan that mirrors the existing dsp/*Engine pattern (prepare(spec), cheap lock-free set* setters, process(buffer) with mix short-circuit), adds 3 lanes to ParameterMatrix.h, wires the engine into PluginProcessor's effect chain + ordering, and adds a testDSPSafety check in tests/main.cpp. New engine code must be RT-safe (no allocation/locks in process). Uses correct house style: #pragma once, PascalCase class, camelCase members no prefix, C++20/JUCE 8.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "dao-daw-debug-crackle",
+      "prompt": "DAO DAW crackles and drops out when I have a lot of tracks playing at once, but it's fine with just one or two. It sounds like glitches, not distortion. Where should I look and how do I track this down?",
+      "expected_output": "Should immediately suspect the audio thread / processBlock callback and reason about real-time safety: hunt for heap allocation, locks/mutexes, logging, or file I/O on the audio path; check AudioEngine::processBlock and its call graph; mention atomics vs SpinLock patterns; recommend building with DAO_DAW_ENABLE_SANITIZERS=ON (ThreadSanitizer for races). Should reference the actual project structure (src/audio/AudioEngine) and exact sanitizer flag, not give generic advice.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "dao-daw-add-saved-parameter",
+      "prompt": "In DAO DAW I want to add a 'drive' control to the DaoCompressor native plugin and make sure it gets saved and restored with the project. Show me how, following how the rest of the codebase does this. Write it as a proposal, don't modify my files.",
+      "expected_output": "Should use APVTS as the parameter source of truth (add a 'drive' parameter to the layout, read it on the audio thread via getRawParameterValue->load(), smooth it), explain that APVTS state is serialized so save/restore comes for free via getStateInformation/setStateInformation, follow the existing native-plugin pattern in src/plugins (mirror an existing Dao* effect), keep processBlock RT-safe, and build/run with the DAO-DAW-Tests target. Correct house style and exact build/test commands.",
+      "files": []
+    }
+  ]
+}

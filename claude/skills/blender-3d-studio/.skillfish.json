@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "blender-3d-studio",
+  "owner": "aegntic",
+  "repo": "cldcde",
+  "path": ".claude/skills/blender-3d-studio",
+  "branch": "main",
+  "sha": "8c89f0d7473622b1bac06b0ee97202f59fabddcb",
+  "source": "manual"
+}

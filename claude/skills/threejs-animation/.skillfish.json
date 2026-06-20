@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "threejs-animation",
+  "owner": "ggprompts",
+  "repo": "my-plugins",
+  "path": "plugins/frontend/threejs/skills/threejs-animation",
+  "branch": "main",
+  "sha": "0e5c91a99a4838307f8a46d8178d6cd2e0fd3af0",
+  "source": "manual"
+}

@@ -1,0 +1,28 @@
+{
+  "_comment": "Template for the user-scope MCP servers (normally stored in ~/.claude.json under the top-level \"mcpServers\" key). SECRETS HAVE BEEN REMOVED — see README + .env.example. Paths marked LOCAL-TOOL point at machine-specific binaries you must install/adjust. setup.sh registers these with `claude mcp add-json`.",
+  "mcpServers": {
+    "lean-ctx": {
+      "_note": "LOCAL-TOOL. Requires the lean-ctx binary (see the `lean-ctx` skill / https://leanctx.ai). Adjust 'command' to wherever it installs on your machine; `which lean-ctx` to find it.",
+      "command": "lean-ctx",
+      "env": {
+        "LEAN_CTX_DATA_DIR": "${HOME}/.config/lean-ctx"
+      }
+    },
+    "magic": {
+      "_note": "21st.dev Magic. NEEDS YOUR OWN API KEY — get one at https://21st.dev and put it in .env as MAGIC_API_KEY (setup.sh substitutes it).",
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@21st-dev/magic@latest"],
+      "env": {
+        "API_KEY": "${MAGIC_API_KEY}"
+      }
+    },
+    "waveforge": {
+      "_note": "LOCAL-TOOL. Waveforge sound engine running from a local Python venv. Clone/build waveforge, create its venv, then point 'command' at that venv's python. Remove this entry if you don't use Waveforge.",
+      "type": "stdio",
+      "command": "${WAVEFORGE_VENV_PYTHON}",
+      "args": ["-m", "waveforge.mcp_server"],
+      "env": {}
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "_comment": "Plugins to install (name@marketplace). 'enabled' mirrors the source workspace. setup.sh installs each and writes the enabled state into ~/.claude/settings.json. These plugins provide the bulk of the ~272 skills (designer-skills suite, carta-crm, legalzoom, vanta, etc.).",
+  "plugins": [
+    { "id": "carta-crm@claude-plugins-official",        "enabled": true,  "provides": "skills (carta-crm:*) + MCP" },
+    { "id": "legalzoom@claude-plugins-official",         "enabled": true,  "provides": "skills (legalzoom:*) + MCP" },
+    { "id": "vanta@claude-plugins-official",             "enabled": true,  "provides": "skills (vanta:*) + MCP" },
+    { "id": "rust-analyzer-lsp@claude-plugins-official", "enabled": true,  "provides": "Rust LSP" },
+    { "id": "design-ops@designer-skills",                "enabled": true,  "provides": "skills (design-ops:*)" },
+    { "id": "design-research@designer-skills",           "enabled": true,  "provides": "skills (design-research:*)" },
+    { "id": "design-systems@designer-skills",            "enabled": true,  "provides": "skills (design-systems:*)" },
+    { "id": "designer-toolkit@designer-skills",          "enabled": true,  "provides": "skills (designer-toolkit:*)" },
+    { "id": "interaction-design@designer-skills",        "enabled": true,  "provides": "skills (interaction-design:*)" },
+    { "id": "prototyping-testing@designer-skills",       "enabled": true,  "provides": "skills (prototyping-testing:*)" },
+    { "id": "ui-design@designer-skills",                 "enabled": true,  "provides": "skills (ui-design:*)" },
+    { "id": "ux-strategy@designer-skills",               "enabled": true,  "provides": "skills (ux-strategy:*)" },
+    { "id": "visual-critique@designer-skills",           "enabled": true,  "provides": "skills (visual-critique:*)" },
+    { "id": "airwallex-agentos@airwallex-marketplace",  "enabled": false, "provides": "Airwallex AgentOS (installed but disabled in source)" }
+  ]
+}

@@ -1,0 +1,23 @@
+# Never commit real secrets or machine-local state
+.env
+*.local
+*.bak
+*.save
+*.save.*
+
+# Generated / runtime Claude state that must NOT be shared
+.credentials.json
+.claude.json
+**/sessions/
+**/projects/
+**/memory/
+**/history.jsonl
+**/file-history/
+**/session-env/
+**/shell-snapshots/
+**/paste-cache/
+**/telemetry/
+**/backups/
+**/daemon/
+**/cache/
+**/.last-*

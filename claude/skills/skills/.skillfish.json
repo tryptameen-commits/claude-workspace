@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "skills",
+  "owner": "dev-gom",
+  "repo": "claude-code-marketplace",
+  "path": "plugins/auto-release-manager/skills",
+  "branch": "main",
+  "sha": "f797e491409ca2a729a7e08db93bc14f88799481",
+  "source": "manual"
+}

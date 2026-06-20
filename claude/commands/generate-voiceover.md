@@ -1,0 +1,1 @@
+/home/troy/.openclaw/workspace/claude-code-video-toolkit/.claude/commands/generate-voiceover.md

@@ -1,0 +1,75 @@
+{
+  "enabledPlugins": {
+    "airwallex-agentos@airwallex-marketplace": false,
+    "carta-crm@claude-plugins-official": true,
+    "design-ops@designer-skills": true,
+    "design-research@designer-skills": true,
+    "design-systems@designer-skills": true,
+    "designer-toolkit@designer-skills": true,
+    "interaction-design@designer-skills": true,
+    "legalzoom@claude-plugins-official": true,
+    "prototyping-testing@designer-skills": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "ui-design@designer-skills": true,
+    "ux-strategy@designer-skills": true,
+    "vanta@claude-plugins-official": true,
+    "visual-critique@designer-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "airwallex-marketplace": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/airwallex/airwallex-marketplace.git"
+      }
+    },
+    "designer-skills": {
+      "source": {
+        "repo": "Owl-Listener/designer-skills",
+        "source": "github"
+      }
+    }
+  },
+  "hooks": {
+    "PostToolUse": [
+      { "matcher": ".*", "hooks": [{ "command": "lean-ctx hook observe", "type": "command" }] }
+    ],
+    "PreCompact": [
+      { "matcher": ".*", "hooks": [{ "command": "lean-ctx hook observe", "type": "command" }] }
+    ],
+    "PreToolUse": [
+      { "matcher": "Bash|bash", "hooks": [{ "command": "lean-ctx hook rewrite", "type": "command" }] },
+      { "matcher": "Read|read|ReadFile|read_file|View|view|Grep|grep|Search|search|ListFiles|list_files|ListDirectory|list_directory", "hooks": [{ "command": "lean-ctx hook redirect", "type": "command" }] }
+    ],
+    "SessionEnd": [
+      { "matcher": ".*", "hooks": [{ "command": "lean-ctx hook observe", "type": "command" }] }
+    ],
+    "SessionStart": [
+      { "matcher": ".*", "hooks": [{ "command": "lean-ctx hook observe", "type": "command" }] }
+    ],
+    "Stop": [
+      { "matcher": ".*", "hooks": [{ "command": "lean-ctx hook observe", "type": "command" }] }
+    ],
+    "UserPromptSubmit": [
+      { "matcher": ".*", "hooks": [{ "command": "lean-ctx hook observe", "type": "command" }] }
+    ]
+  },
+  "model": "opus",
+  "permissions": {
+    "allow": [
+      "mcp__lean-ctx__ctx_read",
+      "mcp__lean-ctx__ctx_search",
+      "mcp__lean-ctx__ctx_tree",
+      "mcp__lean-ctx__ctx_overview",
+      "mcp__lean-ctx__ctx_plan",
+      "mcp__lean-ctx__ctx_metrics",
+      "mcp__lean-ctx__ctx_compress",
+      "mcp__lean-ctx__ctx_session",
+      "mcp__lean-ctx__ctx_knowledge",
+      "mcp__lean-ctx__ctx_graph",
+      "mcp__lean-ctx__ctx_retrieve",
+      "mcp__lean-ctx__ctx_provider"
+    ]
+  },
+  "skipWorkflowUsageWarning": true,
+  "theme": "dark"
+}
